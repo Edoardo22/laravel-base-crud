@@ -1,0 +1,60 @@
+#app {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.sidebar {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  box-shadow: 5px 0px 20px 1px white;
+}
+
+.sidebar li {
+  padding: 0.5rem 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: white;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+  font-size: 1.1rem;
+}
+
+.sidebar .sidebar-header {
+  flex-shrink: 0;
+}
+
+.sidebar .sidebar-main {
+  flex-grow: 1;
+  padding: 2rem 0;
+}
+
+.sidebar .sidebar-footer {
+  padding: 2rem 0;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #2e4f87;
+  padding: 2rem;
+  color: white;
+}
+
+main .card {
+  color: #000000;
+}
+
+main .card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+

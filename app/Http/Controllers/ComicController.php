@@ -39,6 +39,7 @@ class ComicController extends Controller
         $comic = new Comic;
         $comic->title = $request->title;
         $comic->description = $request->description;
+        $comic->thumb = $request->thumb;
         $comic->price = $request->price;
         $comic->series = $request->series;
         $comic->sale_date = $request->sale_date;
