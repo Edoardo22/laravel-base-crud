@@ -17,4 +17,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get("/comics", "ComicController@index")->name("comcis.index");
+Route::get("/comics", "ComicController@index")->name("comics.index");
+Route::get("/comics/create", "ComicController@create")->name("comics.create");
+Route::get("/comics/{id}", "ComicController@show")->name("comics.show");
+Route::post("/comics/store", "ComicController@store")->name("comics.store");

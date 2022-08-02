@@ -1,1 +1,61 @@
-//
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+#app {
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.sidebar {
+    background-color: rgba($color: #000000, $alpha: .7);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    box-shadow: 5px 0px 20px 1px white;
+
+    li {
+        padding: .5rem 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+
+        &:hover {
+            text-decoration: underline;
+            font-size: 1.1rem;
+        }
+    }
+
+    .sidebar-header {
+        flex-shrink: 0;
+    }
+
+    .sidebar-main {
+        flex-grow: 1;
+        padding: 2rem 0;
+    }
+
+    .sidebar-footer {
+        padding: 2rem 0;
+    }
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #2e4f87;
+    padding: 2rem;
+    color: white;
+
+    .card {
+        color: #000000;
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
