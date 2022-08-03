@@ -11,7 +11,15 @@
       <h4 class="card-title">{{$comic["sale_date"]}}</h4>
       <h4 class="card-title">{{$comic["type"]}}</h4>
       <p class="card-text">{{$comic["description"]}}</p>
-      <a href="{{route('comics.index')}}" class="btn btn-primary">indietro</a>
+      <div class="container d-flex  flex-column">
+        <a href="{{route('comics.edit',  $comic->id)}}" class="btn btn-primary">modifica</a>
+        <a href="{{route('comics.index')}}" class="btn btn-warning">indietro</a>
+        <form action="{{route('comics.destroy',  $comic->id)}}" method="POST">
+            @csrf
+            @method('DELETE')
+        <button class="btn btn-danger w-100">Elimina</button>
+    </form>
+</div>
     </div>
   </div>
 @endsection

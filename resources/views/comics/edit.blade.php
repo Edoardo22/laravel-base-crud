@@ -1,25 +1,25 @@
-
 @extends("layouts.app")
 @section("page_content")
-<h1>crea fumetto</h1>
-<form action="{{route('comics.store')}}" method="post">
+<h1>modifica fumetto</h1>
+<form action="{{route('comics.update', $comic->id)}}" method="post">
+    @method('PATCH')
     @csrf
     @if($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
     @endif
     <div class="mb-3">
         <label for="titleComic" class="form-label">Titolo Fumetto</label>
-        <input type="title" name="title" class="form-control" id="titleComic" placeholder="Titolo Fumetto" value="{{old('title')}}">
+        <input type="title" name="title" class="form-control" id="titleComic" value="{{$comic['title']}}" placeholder="Titolo Fumetto">
     </div>
     <div class="mb-3">
         <label for="descriptionComic" class="form-label">Descrizione Fumetto</label>
-        <textarea class="form-control" name="description" id="descriptionComic" rows="3"></textarea>
+        <textarea class="form-control" name="description" id="descriptionComic" rows="3">{{$comic['description']}}</textarea>
     </div>
     <div class="mb-3">
         <label for="imageSrc" class="form-label">Percorso Immagine</label>
@@ -43,9 +43,8 @@
     </div>
 
     <div class="d-flex gap-2">
-        <button type="submit" class="btn btn-success">Aggiungi</button>
+        <button type="submit" class="btn btn-success">modifica</button>
         <a href="{{ route("comics.index")}}" class="btn btn-secondary">Annulla</a>
     </div>
-
   </form>
 @endsection
